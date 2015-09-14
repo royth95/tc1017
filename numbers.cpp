@@ -6,8 +6,8 @@ int x , y, add, subs, multy;
 float div;
 
 cout << "enter two numbers\n" << endl;
-std::cin >> x;
-std::cin >> y;
+cin >> x;
+cin >> y;
 
 add= x+y;
 
@@ -17,9 +17,12 @@ multy= x * y;
 
 div = x/(float) y;
 
-cout << ("x+y=\n", add) << endl;
-cout << ("difference=%d\n", subs) <<endl;
-cout << ("multiplication=%d\n", multy) <<endl;
-cout << ("division=%,2f\n", div) <<endl;
+rem=x%y;
+
+cout << "x+y=" << add << endl;
+cout << "x-y="<< subs << endl;
+cout << "x*y=" << multy << endl;
+cout << "x/y="<< div << endl;
+cout<< "x%y="<< rem <<endl;
 return 0;
 }
