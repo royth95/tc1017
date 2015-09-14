@@ -7,7 +7,7 @@ cout << "put the temperature in Fahrenheit" << endl;
 cin >> F;
 C=5*(F-32)/9;
 cout << "A temperature of " << F << " degrees Fahrenheit is " << C <<  " in Celsius " << endl;
-if (C >= 70)
+if (C >= 100)
   {
     cout << "The water will boil at this conditions" << endl;
   }
