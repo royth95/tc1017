@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+long superpower(long a, long b){
+  long superpower = 1;
+  for(int i = 1; i <= b ; i++){
+    superpower = superpower * a;
+  }
+  return superpower;
+}
+
+void stars(int n){
+  for (int i = 1 ; i <= n; i++){
+    cout << "*";
+  }
+  cout << endl;
+  }
+  int main(){
+    cout << superpower(3,4) << endl;
+    stars(5);
+    return 0;
+  }
