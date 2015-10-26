@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+int x , y, add, subs, multy;
+float div, rem;
+
+cout << "enter two numbers\n" << endl;
+cin >> x;
+cin >> y;
+
+add= x+y;
+
+subs= x-y;
+
+multy= x * y;
+
+div = x/(float) y;
+
+rem=x%y;
+
+cout << "x+y=" << add << endl;
+cout << "x-y="<< subs << endl;
+cout << "x*y=" << multy << endl;
+cout << "x/y="<< div << endl;
+cout<< "x%y="<< rem <<endl;
+return 0;
+}
