@@ -1,0 +1,63 @@
+#include <string>
+#include <iostream>
+#include "BigIntegerLibrary.hh"
+using namespace std;
+
+bool is_palindrome(BigInteger n){
+  string x = bigIntegerToString (n);
+  reverse(x.begin(),x.end());
+  BigInteger y = stringToBigInteger(x);
+  if (n == y){
+    return true;
+  } else{
+      return false;
+  }
+}
+
+BigInteger apply196(BigInteger n){
+  BigInteger candidato;
+
+  string x = bigIntegerToString (n);
+  reverse(x.begin(),x.end());
+  BigInteger y = stringToBigInteger(x);
+
+  candidato = y + n;
+  return candidato;
+}
+
+int main() {
+  int low, high, counterpalindrome = 0, becomepalindrome = 0, Lychrelcounter = 0, nonlychrel, lychrel;
+  BigInteger candidate;
+  cout << "Introduce the first number" << endl;
+  cin >> low;
+  cout << "Introduce the second number" << endl;
+  cin >> high;
+
+  for(int i=low; i<=high; i++){
+    if(is_palindrome(i) == true){
+      counterpalindrome = counterpalindrome + 1;
+    } else{
+
+      candidate = i;
+      int counter = 0;
+
+      while(is_palindrome(candidate)==false && counter < 30){
+        candidate = apply196(candidate);
+        counter++;
+        if (is_palindrome(candidate) == true){
+          becomepalindrome++;
+        }
+      }
+    }
+    if (is_palindrome(candidate) == false) {
+      Lychrelcounter++;
+      cout << "Encontre un numero de Lychrel: " << i << endl;
+    }
+  }
+  cout << "The range of the numbers was " << (high - low) + 1 << " numbers" << endl;
+  cout << "I find " << counterpalindrome << " numbers that are palindromos naturales." << endl;
+  cout << "I find " << becomepalindrome << " numberss that are not from Lychrel." << endl;
+  cout << "I find " << Lychrelcounter << " numbers of Lychrel." << endl;
+
+  return 0;
+}
