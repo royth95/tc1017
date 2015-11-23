@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+double squareroot(double x){
+double r= x, y= 0;
+while (y != r){
+y = r;
+r= (x/r+r)/2;
+}
+return r;
+}
+int main(){
+double num;
+cout<<"This program makes the sqr by babilonian method"<< endl;
+cout<< "Enter a number to do the sqr: "<< endl;
+cin>> num;
+cout<< "the sqr is: "<< squareroot(num)<< endl;
+return 0;
+}
